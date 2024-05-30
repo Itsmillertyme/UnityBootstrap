@@ -1,25 +1,24 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class PlayerReset : MonoBehaviour
-{
+public class PlayerReset : MonoBehaviour {
     public Transform spawnPoint;
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("Player"))
-        {
+    /*
+     * CODE ADDED: Component reference to AudioSource
+     */
+    [SerializeField] AudioSource resetSFX;
+
+    private void OnTriggerEnter(Collider other) {
+        if (other.CompareTag("Player")) {
+            resetSFX.Play();
             ResetPlayer(other.gameObject);
         }
-        else
-        {
+        else {
             other.gameObject.SetActive(false);
         }
     }
 
-    public void ResetPlayer(GameObject other)
-    {
+    public void ResetPlayer(GameObject other) {
         other.transform.position = spawnPoint.position;
     }
 }
