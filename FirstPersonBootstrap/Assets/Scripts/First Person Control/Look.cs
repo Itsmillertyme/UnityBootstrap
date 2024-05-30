@@ -20,13 +20,13 @@ public class Look : MonoBehaviour {
         currentMouseLook += appliedMouseDelta;
 
         /*
-         *CODE CHANGE: Changed up/down look to be clamped from -55 to 90, instead of -90 to 90. 
+         *CODE CHANGE: Changed up/down look to be clamped from -55 to 85, instead of -90 to 90. 
          *
          *This is to prevent the camera clipping inside of the character model
          *
          *Original Code: currentMouseLook.y = Mathf.Clamp(currentMouseLook.y, -90, 90);
         */
-        currentMouseLook.y = Mathf.Clamp(currentMouseLook.y, -55, 90);
+        currentMouseLook.y = Mathf.Clamp(currentMouseLook.y, -55, 85);
 
         charCamera.localRotation = Quaternion.AngleAxis(-currentMouseLook.y, Vector3.right);
         transform.localRotation = Quaternion.AngleAxis(currentMouseLook.x, Vector3.up);
