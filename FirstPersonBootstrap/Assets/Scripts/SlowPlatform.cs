@@ -23,8 +23,8 @@ public class SlowPlatform : MonoBehaviour {
         //Test if player is on platform
         if (isPlayerInZone && player.GetComponent<Jump>().isGrounded) {
             //Set player speeds
-            player.GetComponent<Move>().walkSpeed = 3;
-            player.GetComponent<Move>().runSpeed = 3;
+            player.GetComponent<Move>().walkSpeed = 2;
+            player.GetComponent<Move>().runSpeed = 2;
         }
         else {
             //Reset player speeds

@@ -6,6 +6,15 @@ public class PlatformTriggerScript : MonoBehaviour {
     private void OnTriggerEnter(Collider other) {
         if (other.CompareTag("Player")) {
             isPlayerInsideZone = true;
+
+            /*
+             * CODE ADDED: Added code to trigger if landing on end platform and to play sound
+             */
+            //Test if at end platform
+            if (gameObject.name.CompareTo("End Platform") == 0) {
+                //Play sounds
+                GetComponent<AudioSource>().Play();
+            }
         }
     }
 
