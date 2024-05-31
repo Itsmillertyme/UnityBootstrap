@@ -1,23 +1,18 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-[RequireComponent(typeof(Collider),typeof(Rigidbody))]
-public class Move : MonoBehaviour
-{
+[RequireComponent(typeof(Collider), typeof(Rigidbody))]
+public class Move : MonoBehaviour {
     public float walkSpeed = 5;
     public float runSpeed = 10;
     public KeyCode runKey = KeyCode.LeftShift;
 
     private Rigidbody rb;
 
-    void Start()
-    {
+    void Start() {
         rb = GetComponent<Rigidbody>();
     }
 
-    void Update()
-    {
+    void Update() {
         float speed = Input.GetKey(runKey) ? runSpeed : walkSpeed;
 
         float inputX = Input.GetAxis("Horizontal") * speed * Time.deltaTime;

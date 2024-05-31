@@ -13,7 +13,7 @@ public class Jump : MonoBehaviour {
      * 
      * Original Code: private bool isGrounded = true;
      */
-    [SerializeField] bool isGrounded = true;
+    [SerializeField] public bool isGrounded = true;
 
     /*
      * CODE ADDED: Component reference to audio source on player. Not set in Inspector, initialized in Start()
